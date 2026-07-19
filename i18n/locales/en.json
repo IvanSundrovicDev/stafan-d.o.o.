@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "titleLine1": "Reliable work.",
+    "titleLine2": "Solid foundations.",
+    "subtitle": "Construction, excavation and site preparation works that build the future.",
+    "cta": "Request a quote"
+  },
+  "services": {
+    "excavation": {
+      "title": "Excavation",
+      "description": "Excavation for foundations, trenches, pools and all types of terrain."
+    },
+    "preparation": {
+      "title": "Site preparation",
+      "description": "Ground preparation for construction, levelling and backfilling."
+    },
+    "construction": {
+      "title": "Construction works",
+      "description": "Masonry, concrete works and reinforced concrete structures."
+    },
+    "rental": {
+      "title": "Machine rental",
+      "description": "Rental of construction machinery with an operator."
+    }
+  },
+  "about": {
+    "eyebrow": "About us",
+    "titleLine1": "Experience. Quality.",
+    "titleLine2": "Trust.",
+    "description": "Stafan d.o.o. specialises in construction, excavation and site preparation works throughout Croatia. Our goal is quality workmanship, fair cooperation and satisfied clients.",
+    "stats": {
+      "experience": "Years of experience",
+      "projects": "Completed projects",
+      "clients": "Satisfied clients"
+    },
+    "cta": "Learn more about us"
+  },
+  "projects": {
+    "title": "Our projects",
+    "items": {
+      "foundations": "Excavation & foundations",
+      "concrete": "Concrete works",
+      "landscaping": "Site landscaping",
+      "preparation": "Preparatory works"
+    },
+    "viewAll": "View all projects",
+    "close": "Close",
+    "previous": "Previous project",
+    "next": "Next project"
+  },
+  "cta": {
+    "titleLine1": "Have a project?",
+    "titleLine2": "We have the solution.",
+    "subtitle": "Get in touch and request a free quote.",
+    "button": "Contact us"
+  },
+  "footer": {
+    "tagline": "Reliable construction work that builds the future. Stafan d.o.o. – your partner in construction.",
+    "contact": "Contact",
+    "location": "Braće Radića 39, 31550, Harkanovci",
+    "rights": "All rights reserved."
+  },
+  "map": {
+    "ariaLabel": "Location on the map",
+    "popup": "Braće Radića 39, 31550, Harkanovci"
+  },
+  "a11y": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "selectLanguage": "Select language"
+  },
+  "seo": {
+    "title": "Stafan d.o.o.",
+    "description": "Stafan d.o.o. – construction, excavation, site preparation works and machine rental throughout Croatia. Reliable work and solid foundations.",
+    "ogTitle": "Construction, excavation and site preparation works | Stafan d.o.o.",
+    "ogDescription": "Reliable construction, excavation and site preparation works that build the future.",
+    "twitterTitle": "Stafan d.o.o. | Construction, excavation, site preparation",
+    "twitterDescription": "Construction, excavation and site preparation works throughout Croatia."
+  }
+}

@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap");
+
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (width < 40rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (width < 64rem) {
+  html {
+    scroll-padding-top: 1rem;
+  }
+
+  section[id],
+  div[id],
+  footer[id] {
+    scroll-margin-top: 1rem;
+  }
+}
+
+body {
+  background: #000;
+  color: white;
+  font-family: "Inter", sans-serif;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+svg,
+iframe,
+input,
+textarea,
+button {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+span,
+button,
+label {
+  overflow-wrap: anywhere;
+}
+
+.section {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary text-dark font-semibold uppercase tracking-wide rounded-md transition;
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.08);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-primary text-primary font-semibold uppercase tracking-wide rounded-md transition hover:bg-primary hover:text-dark;
+  }
+}
+
+.card {
+  @apply border
+  border-white/10
+  rounded-lg
+  transition-all
+  duration-300;
+  background: #141414;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 179, 1, 0.45);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}

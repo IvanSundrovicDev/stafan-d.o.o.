@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "home": "Početna",
+    "about": "O nama",
+    "services": "Usluge",
+    "projects": "Projekti",
+    "gallery": "Galerija",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "titleLine1": "Pouzdani radovi.",
+    "titleLine2": "Čvrsti temelji.",
+    "subtitle": "Građevinski radovi, iskopi i pripremni radovi koji grade budućnost.",
+    "cta": "Zatraži ponudu"
+  },
+  "services": {
+    "excavation": {
+      "title": "Iskopi",
+      "description": "Iskopi za temelje, kanale, bazene i sve vrste terena."
+    },
+    "preparation": {
+      "title": "Pripremni radovi",
+      "description": "Priprema terena za gradnju, niveliranje i nasipavanje."
+    },
+    "construction": {
+      "title": "Građevinski radovi",
+      "description": "Zidarski radovi, betonski radovi i armirano-betonske konstrukcije."
+    },
+    "rental": {
+      "title": "Najam strojeva",
+      "description": "Najam građevinskih strojeva s operaterom."
+    }
+  },
+  "about": {
+    "eyebrow": "O nama",
+    "titleLine1": "Iskustvo. Kvaliteta.",
+    "titleLine2": "Povjerenje.",
+    "description": "Tvrtka Stafan d.o.o. bavi se građevinskim radovima, iskopima i pripremnim radovima na području cijele Hrvatske. Naš cilj je kvalitetno izveden posao, poštena suradnja i zadovoljni klijenti.",
+    "stats": {
+      "experience": "Godina iskustva",
+      "projects": "Završenih projekata",
+      "clients": "Zadovoljnih klijenata"
+    },
+    "cta": "Saznaj više o nama"
+  },
+  "projects": {
+    "title": "Naši projekti",
+    "items": {
+      "foundations": "Iskopi i temelji",
+      "concrete": "Betonski radovi",
+      "landscaping": "Uređenje terena",
+      "preparation": "Pripremni radovi"
+    },
+    "viewAll": "Pogledaj sve projekte",
+    "close": "Zatvori",
+    "previous": "Prethodni projekt",
+    "next": "Sljedeći projekt"
+  },
+  "cta": {
+    "titleLine1": "Imate projekt?",
+    "titleLine2": "Mi imamo rješenje.",
+    "subtitle": "Javite nam se i zatražite besplatnu ponudu.",
+    "button": "Kontaktirajte nas"
+  },
+  "footer": {
+    "tagline": "Pouzdani građevinski radovi koji grade budućnost. Stafan d.o.o. – vaš partner u gradnji.",
+    "contact": "Kontakt",
+    "location": "Braće Radića 39, 31550, Harkanovci",
+    "rights": "Sva prava pridržana."
+  },
+  "map": {
+    "ariaLabel": "Lokacija na karti",
+    "popup": "Braće Radića 39, 31550, Harkanovci"
+  },
+  "a11y": {
+    "openMenu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik",
+    "selectLanguage": "Odaberi jezik"
+  },
+  "seo": {
+    "title": "Stafan d.o.o.",
+    "description": "Stafan d.o.o. – građevinski radovi, iskopi, pripremni radovi i najam strojeva na području cijele Hrvatske. Pouzdani radovi i čvrsti temelji.",
+    "ogTitle": "Građevinski radovi, iskopi i pripremni radovi | Stafan d.o.o.",
+    "ogDescription": "Pouzdani građevinski radovi, iskopi i pripremni radovi koji grade budućnost.",
+    "twitterTitle": "Stafan d.o.o. | Građevinski radovi, iskopi, pripremni radovi",
+    "twitterDescription": "Građevinski radovi, iskopi i pripremni radovi na području cijele Hrvatske."
+  }
+}

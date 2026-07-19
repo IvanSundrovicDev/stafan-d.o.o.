@@ -1,0 +1,88 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "gallery": "Galerie",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "titleLine1": "Zuverlässige Arbeit.",
+    "titleLine2": "Solide Fundamente.",
+    "subtitle": "Bauarbeiten, Aushub und Vorbereitungsarbeiten, die die Zukunft bauen.",
+    "cta": "Angebot anfordern"
+  },
+  "services": {
+    "excavation": {
+      "title": "Aushub",
+      "description": "Aushub für Fundamente, Kanäle, Pools und alle Arten von Gelände."
+    },
+    "preparation": {
+      "title": "Vorbereitungsarbeiten",
+      "description": "Geländevorbereitung für den Bau, Nivellierung und Aufschüttung."
+    },
+    "construction": {
+      "title": "Bauarbeiten",
+      "description": "Maurerarbeiten, Betonarbeiten und Stahlbetonkonstruktionen."
+    },
+    "rental": {
+      "title": "Maschinenverleih",
+      "description": "Vermietung von Baumaschinen mit Bediener."
+    }
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "titleLine1": "Erfahrung. Qualität.",
+    "titleLine2": "Vertrauen.",
+    "description": "Die Firma Stafan d.o.o. ist in ganz Kroatien im Bereich Bauarbeiten, Aushub und Vorbereitungsarbeiten tätig. Unser Ziel sind hochwertige Arbeit, faire Zusammenarbeit und zufriedene Kunden.",
+    "stats": {
+      "experience": "Jahre Erfahrung",
+      "projects": "Abgeschlossene Projekte",
+      "clients": "Zufriedene Kunden"
+    },
+    "cta": "Mehr über uns erfahren"
+  },
+  "projects": {
+    "title": "Unsere Projekte",
+    "items": {
+      "foundations": "Aushub & Fundamente",
+      "concrete": "Betonarbeiten",
+      "landscaping": "Geländegestaltung",
+      "preparation": "Vorbereitungsarbeiten"
+    },
+    "viewAll": "Alle Projekte ansehen",
+    "close": "Schließen",
+    "previous": "Vorheriges Projekt",
+    "next": "Nächstes Projekt"
+  },
+  "cta": {
+    "titleLine1": "Haben Sie ein Projekt?",
+    "titleLine2": "Wir haben die Lösung.",
+    "subtitle": "Kontaktieren Sie uns und fordern Sie ein kostenloses Angebot an.",
+    "button": "Kontaktieren Sie uns"
+  },
+  "footer": {
+    "tagline": "Zuverlässige Bauarbeiten, die die Zukunft bauen. Stafan d.o.o. – Ihr Partner am Bau.",
+    "contact": "Kontakt",
+    "location": "Braće Radića 39, 31550, Harkanovci",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "map": {
+    "ariaLabel": "Standort auf der Karte",
+    "popup": "Braće Radića 39, 31550, Harkanovci"
+  },
+  "a11y": {
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "selectLanguage": "Sprache auswählen"
+  },
+  "seo": {
+    "title": "Stafan d.o.o.",
+    "description": "Stafan d.o.o. – Bauarbeiten, Aushub, Vorbereitungsarbeiten und Maschinenverleih in ganz Kroatien. Zuverlässige Arbeit und solide Fundamente.",
+    "ogTitle": "Bauarbeiten, Aushub und Vorbereitungsarbeiten | Stafan d.o.o.",
+    "ogDescription": "Zuverlässige Bauarbeiten, Aushub und Vorbereitungsarbeiten, die die Zukunft bauen.",
+    "twitterTitle": "Stafan d.o.o. | Bauarbeiten, Aushub, Vorbereitungsarbeiten",
+    "twitterDescription": "Bauarbeiten, Aushub und Vorbereitungsarbeiten in ganz Kroatien."
+  }
+}
