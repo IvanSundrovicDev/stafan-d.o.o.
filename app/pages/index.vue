@@ -22,12 +22,20 @@ useSeoMeta({
   ogType: "website",
   ogLocale: () => ogLocaleMap[locale.value] ?? "hr_HR",
   ogUrl: "https://stafan-doo.com/",
-  ogImage: "https://stafan-doo.com/images/logo.png",
+  ogImage: {
+    url: "https://stafan-doo.com/images/hero.jpg",
+    width: 1536,
+    height: 1024,
+    type: "image/jpeg",
+    alt: "Stafan d.o.o. – građevinski radovi, iskopi i pripremni radovi",
+  },
 
   twitterCard: "summary_large_image",
   twitterTitle: () => t("seo.twitterTitle"),
   twitterDescription: () => t("seo.twitterDescription"),
-  twitterImage: "https://stafan-doo.com/images/logo.png",
+  twitterImage: "https://stafan-doo.com/images/hero.jpg",
+  twitterImageAlt:
+    "Stafan d.o.o. – građevinski radovi, iskopi i pripremni radovi",
 });
 
 useHead({
