@@ -33,7 +33,7 @@ useSeoMeta({
   twitterCard: "summary_large_image",
   twitterTitle: () => t("seo.twitterTitle"),
   twitterDescription: () => t("seo.twitterDescription"),
-  twitterImage: "https://stafan.netlify.app/images/hero.jpg",
+  twitterImage: "https://stafan.netlify.app/twitter-card.jpg",
   twitterImageAlt:
     "Stafan d.o.o. – građevinski radovi, iskopi i pripremni radovi",
 });
