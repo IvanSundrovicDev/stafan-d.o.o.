@@ -36,7 +36,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://stafan-doo.com',
+    url: 'https://stafan.netlify.app',
     name: 'Stafan d.o.o.'
   },
 

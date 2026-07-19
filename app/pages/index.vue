@@ -21,9 +21,9 @@ useSeoMeta({
 
   ogType: "website",
   ogLocale: () => ogLocaleMap[locale.value] ?? "hr_HR",
-  ogUrl: "https://stafan-doo.com/",
+  ogUrl: "https://stafan.netlify.app/",
   ogImage: {
-    url: "https://stafan-doo.com/images/hero.jpg",
+    url: "https://stafan.netlify.app/images/hero.jpg",
     width: 1536,
     height: 1024,
     type: "image/jpeg",
@@ -33,7 +33,7 @@ useSeoMeta({
   twitterCard: "summary_large_image",
   twitterTitle: () => t("seo.twitterTitle"),
   twitterDescription: () => t("seo.twitterDescription"),
-  twitterImage: "https://stafan-doo.com/images/hero.jpg",
+  twitterImage: "https://stafan.netlify.app/images/hero.jpg",
   twitterImageAlt:
     "Stafan d.o.o. – građevinski radovi, iskopi i pripremni radovi",
 });
@@ -42,7 +42,7 @@ useHead({
   link: [
     {
       rel: "canonical",
-      href: "https://stafan-doo.com/",
+      href: "https://stafan.netlify.app/",
     },
     {
       rel: "icon",
@@ -83,10 +83,10 @@ useHead({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "GeneralContractor",
-        "@id": "https://stafan-doo.com/#generalcontractor",
+        "@id": "https://stafan.netlify.app/#generalcontractor",
         name: "Stafan d.o.o.",
-        url: "https://stafan-doo.com/",
-        image: "https://stafan-doo.com/images/logo.png",
+        url: "https://stafan.netlify.app/",
+        image: "https://stafan.netlify.app/images/logo.png",
         priceRange: "$$",
         email: "josip.striskovic@gmail.com",
         telephone: "+385916403820",
