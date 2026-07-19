@@ -23,7 +23,7 @@ useSeoMeta({
   ogLocale: () => ogLocaleMap[locale.value] ?? "hr_HR",
   ogUrl: "https://stafan.netlify.app/",
   ogImage: {
-    url: "https://stafan.netlify.app/images/hero.jpg",
+    url: "https://stafan.netlify.app/twitter-card.jpg",
     width: 1536,
     height: 1024,
     type: "image/jpeg",
