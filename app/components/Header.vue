@@ -26,17 +26,22 @@ const closeMobileMenu = () => {
     class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/5 will-change-transform"
   >
     <div class="section">
-      <div class="h-20 sm:h-24 flex items-center justify-between">
+      <div class="relative h-20 sm:h-24 flex items-center justify-between">
         <a href="#pocetna" class="shrink-0">
           <img
-            src="/images/logo.png"
+            src="/images/mobile-logo.webp"
             alt="Stafan d.o.o."
-            class="h-14 sm:h-20 w-auto"
+            class="lg:hidden h-8 sm:h-12 w-auto"
+          />
+          <img
+            src="/images/logo.webp"
+            alt="Stafan d.o.o."
+            class="hidden lg:block h-20 w-auto"
           />
         </a>
 
         <nav
-          class="hidden lg:flex items-center gap-8 text-sm font-medium uppercase tracking-wide"
+          class="hidden lg:flex items-center gap-8 text-sm font-medium uppercase tracking-wide absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <a
             v-for="link in links"
@@ -60,18 +65,22 @@ const closeMobileMenu = () => {
           </a>
         </div>
 
-        <button
-          type="button"
-          class="lg:hidden cursor-pointer inline-flex items-center justify-center w-11 h-11 rounded-md border border-white/10 bg-white/5 text-white/90 hover:bg-white/10 transition"
-          :aria-expanded="isMobileMenuOpen"
-          :aria-label="
-            isMobileMenuOpen ? t('a11y.closeMenu') : t('a11y.openMenu')
-          "
-          @click="toggleMobileMenu"
-        >
-          <X v-if="isMobileMenuOpen" :size="20" />
-          <Menu v-else :size="20" />
-        </button>
+        <div class="lg:hidden flex items-center gap-2">
+          <LanguageSwitcher />
+
+          <button
+            type="button"
+            class="cursor-pointer inline-flex items-center justify-center w-11 h-11 rounded-md border border-white/10 bg-white/5 text-white/90 hover:bg-white/10 transition"
+            :aria-expanded="isMobileMenuOpen"
+            :aria-label="
+              isMobileMenuOpen ? t('a11y.closeMenu') : t('a11y.openMenu')
+            "
+            @click="toggleMobileMenu"
+          >
+            <X v-if="isMobileMenuOpen" :size="20" />
+            <Menu v-else :size="20" />
+          </button>
+        </div>
       </div>
 
       <Transition
@@ -103,10 +112,6 @@ const closeMobileMenu = () => {
           v-if="isMobileMenuOpen"
           class="lg:hidden absolute top-[calc(100%-0.25rem)] left-3 right-3 sm:left-4 sm:right-4 rounded-2xl border border-white/10 bg-zinc-950/95 backdrop-blur-xl shadow-[0_24px_80px_rgba(0,0,0,0.55)] p-4 sm:p-5"
         >
-          <div class="flex justify-end mb-3">
-            <LanguageSwitcher />
-          </div>
-
           <nav class="flex flex-col gap-2">
             <a
               v-for="link in links"

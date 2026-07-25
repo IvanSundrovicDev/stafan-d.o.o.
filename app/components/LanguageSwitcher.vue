@@ -30,7 +30,7 @@ const selectLocale = async (code: string) => {
 </script>
 
 <template>
-  <div ref="root" class="relative">
+  <div ref="root" class="relative" translate="no">
     <button
       type="button"
       class="inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-white/5 px-3 py-2.5 text-sm font-medium uppercase tracking-wide text-white/90 hover:bg-white/10 hover:text-primary transition cursor-pointer"

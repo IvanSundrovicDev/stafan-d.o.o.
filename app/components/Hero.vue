@@ -42,7 +42,7 @@ const { t } = useI18n();
 
 <style scoped>
 .hero-bg {
-  background-image: url("/images/hero.jpg");
+  background-image: url("/images/hero.webp");
   background-size: cover;
   background-position: center;
 }

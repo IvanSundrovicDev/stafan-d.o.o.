@@ -3,16 +3,16 @@ import { ref, onMounted } from "vue";
 import { ShieldCheck, HardHat, Users, ArrowRight } from "lucide-vue-next";
 
 const { t } = useI18n();
+const isExpanded = ref(false);
 
 const stats = [
   {
-    value: 10,
+    value: 15,
     suffix: "+",
     labelKey: "about.stats.experience",
     icon: ShieldCheck,
   },
-  { value: 100, suffix: "+", labelKey: "about.stats.projects", icon: HardHat },
-  { value: 50, suffix: "+", labelKey: "about.stats.clients", icon: Users },
+  { value: 170, suffix: "+", labelKey: "about.stats.projects", icon: HardHat },
 ];
 
 const statsContainer = ref<HTMLElement | null>(null);
@@ -67,9 +67,10 @@ onMounted(() => {
 <template>
   <section
     id="o-nama"
-    class="pt-20 sm:pt-28 pb-16 sm:pb-24 bg-[radial-gradient(120%_90%_at_10%_10%,rgba(245,179,1,0.08)_0%,rgba(0,0,0,0)_55%)]"
-  >
-    <div class="section grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    class="pt-20 sm:pt-28 pb-16 sm:pb-24">
+    <div
+      class="section grid gap-x-10 gap-y-0 lg:grid-cols-2 lg:gap-x-16 items-center"
+    >
       <div>
         <div class="flex items-center gap-3 mb-5">
           <span
@@ -94,12 +95,12 @@ onMounted(() => {
 
         <div
           ref="statsContainer"
-          class="mt-8 sm:mt-10 flex flex-col gap-3 sm:gap-4 lg:grid lg:grid-cols-3"
+          class="mt-8 sm:mt-10 flex flex-col gap-3 sm:gap-4 lg:grid lg:grid-cols-2"
         >
           <div
             v-for="(stat, index) in stats"
             :key="stat.labelKey"
-            class="card p-3 sm:p-4 flex items-center gap-3 sm:gap-4 lg:flex-col lg:items-start lg:gap-0"
+            class="card p-3 sm:p-4 flex items-center gap-3 sm:gap-4"
           >
             <div
               class="inline-flex items-center justify-center rounded-xl bg-primary/10 size-12 sm:size-14 text-primary shrink-0"
@@ -122,13 +123,19 @@ onMounted(() => {
           </div>
         </div>
 
-        <a href="#o-nama" class="btn-primary mt-8 sm:mt-10 px-8 py-4 text-sm">
-          {{ t("about.cta") }}
+        <button
+          type="button"
+          class="btn-primary mt-8 sm:mt-10 px-8 py-4 text-sm"
+          :aria-expanded="isExpanded"
+          aria-controls="about-details"
+          @click="isExpanded = !isExpanded"
+        >
+          {{ isExpanded ? t("about.collapseCta") : t("about.cta") }}
           <ArrowRight :size="18" />
-        </a>
+        </button>
       </div>
 
-      <div class="relative">
+      <div class="relative mt-10 self-start lg:mt-0">
         <img
           src="/images/about.jpg"
           alt="Stafan d.o.o. na gradilištu"
@@ -136,6 +143,60 @@ onMounted(() => {
           class="w-full h-[280px] sm:h-[420px] object-cover object-center rounded-lg border border-white/10"
         />
       </div>
+
+      <Transition name="about-details">
+        <div
+          v-show="isExpanded"
+          id="about-details"
+          class="about-details mt-6 grid w-full text-zinc-400 leading-relaxed lg:col-span-2"
+        >
+          <div class="about-details__content space-y-4">
+            <p>{{ t("about.details.paragraph1") }}</p>
+            <p>{{ t("about.details.paragraph2") }}</p>
+            <p>{{ t("about.details.paragraph3") }}</p>
+            <p>{{ t("about.details.paragraph4") }}</p>
+            <p>{{ t("about.details.paragraph5") }}</p>
+          </div>
+        </div>
+      </Transition>
     </div>
   </section>
 </template>
+
+<style scoped>
+.about-details-enter-active,
+.about-details-leave-active {
+  transition:
+    grid-template-rows 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    margin-top 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 450ms ease,
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-details-enter-from,
+.about-details-leave-to {
+  grid-template-rows: 0fr;
+  margin-top: 0;
+  opacity: 0;
+}
+
+.about-details-enter-to,
+.about-details-leave-from {
+  grid-template-rows: 1fr;
+  margin-top: 1.5rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-details__content {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-details-enter-active,
+  .about-details-leave-active {
+    transition: none;
+  }
+}
+</style>

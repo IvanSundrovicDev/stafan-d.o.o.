@@ -29,6 +29,10 @@
     "rental": {
       "title": "Machine rental",
       "description": "Rental of construction machinery with an operator."
+    },
+    "roads": {
+      "title": "Road & driveway construction",
+      "description": "Access roads, driveways and paving/asphalt works."
     }
   },
   "about": {
@@ -41,15 +45,42 @@
       "projects": "Completed projects",
       "clients": "Satisfied clients"
     },
-    "cta": "Learn more about us"
+    "cta": "Learn more about us",
+    "collapseCta": "Show less",
+    "details": {
+      "paragraph1": "Stafan d.o.o. is a construction partner from the first excavation through to a fully prepared site. We carry out earthworks and site preparation, excavation, grading and the work needed to ensure construction starts safely and progresses smoothly.",
+      "paragraph2": "Every project begins with a careful discussion and an assessment of the site’s real requirements. With our own machinery and an experienced team, we organise work efficiently while keeping communication clear, respecting agreed timelines and paying attention to on-site details.",
+      "paragraph3": "We work with private investors, businesses and contractors across Croatia. Whether the project calls for plot preparation, an access road or more demanding excavation, our aim is to deliver lasting quality and a working relationship clients can depend on.",
+      "paragraph4": "On every job, we prioritise safety, a tidy site and a responsible approach to the surrounding space. Regularly maintained equipment, thorough preparation and coordination with everyone involved let us adapt to site conditions without compromising on the quality of the result.",
+      "paragraph5": "We believe trust is earned through reliability and open communication. From the first enquiry and planning conversation through to completion, we are available to provide practical solutions that fit each client’s plans, budget and schedule."
+    }
   },
   "projects": {
     "title": "Our projects",
+    "back": "Back to projects",
+    "openImage": "Open image",
+    "scopeTitle": "Scope of work",
     "items": {
       "foundations": "Excavation & foundations",
       "concrete": "Concrete works",
       "landscaping": "Site landscaping",
-      "preparation": "Preparatory works"
+      "preparation": "Preparatory works",
+      "residential-site": {
+        "category": "Residential landscaping",
+        "title": "Site and driveway preparation",
+        "intro": "Preparing the grounds around a family home for a neat, practical and long-lasting outdoor space.",
+        "paragraph1": "The work covered shaping and grading the land around the existing property, carefully coordinating it with access to the house and neighbouring plots. The surface was prepared in layers to provide a level, stable base for the next stages of work.",
+        "paragraph2": "Particular attention was given to organising the approach and finishing the area around the building. The result is a clean, prepared plot ready for subsequent works, final surface treatments and everyday use.",
+        "scope": { "one": "Excavation and base preparation", "two": "Grading and shaping the terrain", "three": "Preparing the area around the home and access route" }
+      },
+      "urban-excavation": {
+        "category": "Excavation and site preparation",
+        "title": "Urban plot excavation",
+        "intro": "Precise earthworks on a confined city plot, prepared for the next phase of construction.",
+        "paragraph1": "Excavation and levelling of the work area were carried out between existing buildings. In the compact space, the movement of machinery and placement of material had to be carefully organised without obstructing surrounding access.",
+        "paragraph2": "After the surface layer was removed, the ground was levelled and prepared for further construction work. The photographs show a well-organised site and a stable work zone ready for the next stage.",
+        "scope": { "one": "Machine excavation", "two": "Levelling and work-area preparation", "three": "Work coordination in a confined space" }
+      }
     },
     "viewAll": "View all projects",
     "close": "Close",
@@ -57,10 +88,24 @@
     "next": "Next project"
   },
   "cta": {
+    "eyebrow": "Free quote",
     "titleLine1": "Have a project?",
     "titleLine2": "We have the solution.",
-    "subtitle": "Get in touch and request a free quote.",
-    "button": "Contact us"
+    "subtitle": "Get in touch and request a free quote for your construction, excavation or site preparation works.",
+    "features": {
+      "quote": "Free, no-obligation quote",
+      "response": "Fast response within 24 hours",
+      "machinery": "Our own modern machinery",
+      "coverage": "Work throughout Osijek-Baranja County"
+    },
+    "card": {
+      "title": "Request a quote",
+      "subtitle": "Call us or send an inquiry — we'll get back to you shortly.",
+      "callLabel": "Call us",
+      "mailLabel": "Send an email",
+      "locationLabel": "Visit us",
+      "note": "We usually reply the same day."
+    }
   },
   "footer": {
     "tagline": "Reliable construction work that builds the future. Stafan d.o.o. – your partner in construction.",

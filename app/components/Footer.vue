@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
   >
     <div class="section grid lg:grid-cols-3 gap-8 sm:gap-12">
       <div>
-        <img src="/images/logo.png" alt="Stafan d.o.o." class="h-16 sm:h-20" />
+        <img src="/images/logo.webp" alt="Stafan d.o.o." class="h-28" />
 
         <p class="text-zinc-400 mt-4 sm:mt-6 text-sm sm:text-base max-w-sm">
           {{ t("footer.tagline") }}

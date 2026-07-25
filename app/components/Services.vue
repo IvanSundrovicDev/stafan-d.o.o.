@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { Shovel, Truck, BrickWall, Wrench } from "lucide-vue-next";
+import { Shovel, Truck, BrickWall, Wrench, Route } from "lucide-vue-next";
 
 const { t } = useI18n();
 
 const services = [
   { key: "excavation", icon: Shovel },
   { key: "preparation", icon: Truck },
-  { key: "construction", icon: BrickWall },
   { key: "rental", icon: Wrench },
+  { key: "roads", icon: Route },
 ];
 </script>
 

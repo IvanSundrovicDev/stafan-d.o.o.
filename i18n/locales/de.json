@@ -29,6 +29,10 @@
     "rental": {
       "title": "Maschinenverleih",
       "description": "Vermietung von Baumaschinen mit Bediener."
+    },
+    "roads": {
+      "title": "Straßen- und Zufahrtsbau",
+      "description": "Zufahrtsstraßen, Einfahrten sowie Asphaltierung und Pflasterung."
     }
   },
   "about": {
@@ -41,15 +45,42 @@
       "projects": "Abgeschlossene Projekte",
       "clients": "Zufriedene Kunden"
     },
-    "cta": "Mehr über uns erfahren"
+    "cta": "Mehr über uns erfahren",
+    "collapseCta": "Weniger anzeigen",
+    "details": {
+      "paragraph1": "Stafan d.o.o. ist Ihr Partner für Bauarbeiten – vom ersten Aushub bis zur fachgerecht vorbereiteten Baustelle. Wir übernehmen Erd- und Vorbereitungsarbeiten, Aushub, Geländemodellierung sowie alle Arbeiten für einen sicheren Baubeginn und reibungslosen Ablauf.",
+      "paragraph2": "Jedes Projekt beginnt mit einer sorgfältigen Abstimmung und einer Bewertung der tatsächlichen Anforderungen vor Ort. Mit eigenen Maschinen und einem erfahrenen Team organisieren wir die Arbeiten effizient, kommunizieren klar, halten vereinbarte Termine ein und achten auf jedes Detail auf der Baustelle.",
+      "paragraph3": "Wir arbeiten für private Bauherren, Unternehmen und Auftragnehmer in ganz Kroatien. Ob Grundstücksvorbereitung, Zufahrtsweg oder anspruchsvoller Aushub: Unser Ziel sind dauerhaft hochwertige Ergebnisse und eine Zusammenarbeit, auf die sich unsere Kunden verlassen können.",
+      "paragraph4": "Bei jedem Auftrag achten wir auf Sicherheit, eine saubere Baustelle und einen verantwortungsvollen Umgang mit der Umgebung. Regelmäßig gewartete Geräte, gründliche Vorbereitung und die Koordination aller Beteiligten ermöglichen es uns, auf die Bedingungen vor Ort zu reagieren, ohne bei der Qualität Abstriche zu machen.",
+      "paragraph5": "Wir sind überzeugt, dass Vertrauen durch Zuverlässigkeit und offene Kommunikation entsteht. Vom ersten Gespräch und der Planung bis zum Abschluss der Arbeiten stehen wir unseren Kunden mit praktischen Lösungen zur Seite, die zu ihren Plänen, ihrem Budget und ihrem Zeitrahmen passen."
+    }
   },
   "projects": {
     "title": "Unsere Projekte",
+    "back": "Zurück zu den Projekten",
+    "openImage": "Bild öffnen",
+    "scopeTitle": "Leistungsumfang",
     "items": {
       "foundations": "Aushub & Fundamente",
       "concrete": "Betonarbeiten",
       "landscaping": "Geländegestaltung",
-      "preparation": "Vorbereitungsarbeiten"
+      "preparation": "Vorbereitungsarbeiten",
+      "residential-site": {
+        "category": "Gestaltung eines Wohngrundstücks",
+        "title": "Gelände- und Zufahrtsvorbereitung",
+        "intro": "Vorbereitung des Grundstücks an einem Einfamilienhaus für einen ordentlichen, funktionalen und langlebigen Außenbereich.",
+        "paragraph1": "Die Arbeiten umfassten die Modellierung und Nivellierung des Geländes rund um das bestehende Gebäude sowie die sorgfältige Abstimmung mit dem Zugang zum Haus und den Nachbargrundstücken. Die Fläche wurde schichtweise vorbereitet, damit die folgenden Arbeitsschritte eine ebene und stabile Grundlage erhalten.",
+        "paragraph2": "Besondere Aufmerksamkeit galt der Organisation der Zufahrt und der Gestaltung des Bereichs am Gebäude. Das Ergebnis ist ein sauberes, vorbereitetes Grundstück, das für weitere Arbeiten, Oberflächenbeläge und die tägliche Nutzung bereit ist.",
+        "scope": { "one": "Aushub und Untergrundvorbereitung", "two": "Nivellierung und Geländemodellierung", "three": "Vorbereitung des Bereichs am Haus und der Zufahrt" }
+      },
+      "urban-excavation": {
+        "category": "Aushub und Baustellenvorbereitung",
+        "title": "Aushub auf einem Stadtgrundstück",
+        "intro": "Präzise Erdarbeiten auf einem begrenzten Stadtgrundstück, vorbereitet für die nächste Bauphase.",
+        "paragraph1": "Zwischen bestehenden Gebäuden wurden der Aushub und die Nivellierung der Arbeitsfläche ausgeführt. Auf engem Raum mussten die Bewegungen der Maschinen und die Ablage des Materials sorgfältig organisiert werden, ohne die umliegenden Zufahrten zu beeinträchtigen.",
+        "paragraph2": "Nach dem Abtrag der obersten Schicht wurde das Gelände geebnet und für die weiteren Bauarbeiten vorbereitet. Die Fotos zeigen eine ordentlich organisierte Baustelle und eine stabile Arbeitsfläche für die nächste Phase.",
+        "scope": { "one": "Maschineller Aushub", "two": "Nivellierung und Vorbereitung der Arbeitsfläche", "three": "Arbeitsorganisation auf begrenztem Raum" }
+      }
     },
     "viewAll": "Alle Projekte ansehen",
     "close": "Schließen",
@@ -57,10 +88,24 @@
     "next": "Nächstes Projekt"
   },
   "cta": {
+    "eyebrow": "Kostenloses Angebot",
     "titleLine1": "Haben Sie ein Projekt?",
     "titleLine2": "Wir haben die Lösung.",
-    "subtitle": "Kontaktieren Sie uns und fordern Sie ein kostenloses Angebot an.",
-    "button": "Kontaktieren Sie uns"
+    "subtitle": "Kontaktieren Sie uns und fordern Sie ein kostenloses Angebot für Ihre Bau-, Aushub- oder Vorbereitungsarbeiten an.",
+    "features": {
+      "quote": "Kostenloses, unverbindliches Angebot",
+      "response": "Schnelle Antwort innerhalb von 24 Stunden",
+      "machinery": "Eigene moderne Maschinen",
+      "coverage": "Arbeiten in der Gespanschaft Osijek-Baranja"
+    },
+    "card": {
+      "title": "Angebot anfordern",
+      "subtitle": "Rufen Sie uns an oder senden Sie eine Anfrage — wir melden uns umgehend.",
+      "callLabel": "Rufen Sie uns an",
+      "mailLabel": "E-Mail senden",
+      "locationLabel": "Besuchen Sie uns",
+      "note": "Wir antworten meist noch am selben Tag."
+    }
   },
   "footer": {
     "tagline": "Zuverlässige Bauarbeiten, die die Zukunft bauen. Stafan d.o.o. – Ihr Partner am Bau.",

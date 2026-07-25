@@ -29,6 +29,10 @@
     "rental": {
       "title": "Najam strojeva",
       "description": "Najam građevinskih strojeva s operaterom."
+    },
+    "roads": {
+      "title": "Izgradnja cesta i prilaza",
+      "description": "Pristupne ceste, prilazi te asfaltiranje i popločavanje."
     }
   },
   "about": {
@@ -41,15 +45,42 @@
       "projects": "Završenih projekata",
       "clients": "Zadovoljnih klijenata"
     },
-    "cta": "Saznaj više o nama"
+    "cta": "Saznaj više o nama",
+    "collapseCta": "Prikaži manje",
+    "details": {
+      "paragraph1": "Stafan d.o.o. partner je za građevinske radove od prvog iskopa do uredno pripremljenog gradilišta. Izvodimo zemljane i pripremne radove, iskope, ravnanje terena te radove potrebne za siguran početak i nesmetan tijek gradnje.",
+      "paragraph2": "Svaki projekt započinjemo pažljivim dogovorom i procjenom stvarnih potreba lokacije. Vlastitom mehanizacijom i iskusnim timom organiziramo radove učinkovito, uz jasnu komunikaciju, poštivanje dogovorenih rokova i brigu o detaljima na terenu.",
+      "paragraph3": "Radimo za privatne investitore, poslovne korisnike i izvođače radova diljem Hrvatske. Bilo da je riječ o pripremi parcele, uređenju pristupnog puta ili zahtjevnijem iskopu, cilj nam je ostaviti kvalitetno izveden posao i odnos na koji se klijenti mogu osloniti.",
+      "paragraph4": "U svakom poslu vodimo računa o sigurnosti, urednosti radilišta i odgovornom odnosu prema prostoru u kojem radimo. Redovito održavana oprema, dobra priprema i koordinacija svih sudionika omogućuju nam da se prilagodimo uvjetima na terenu bez kompromisa u kvaliteti izvedbe.",
+      "paragraph5": "Vjerujemo da se povjerenje gradi pouzdanošću i otvorenim odnosom. Zato svojim klijentima stojimo na raspolaganju od početnog upita i dogovora do završetka radova, pružajući konkretna rješenja koja odgovaraju njihovim planovima, proračunu i rokovima."
+    }
   },
   "projects": {
     "title": "Naši projekti",
+    "back": "Natrag na projekte",
+    "openImage": "Otvori sliku",
+    "scopeTitle": "Opseg radova",
     "items": {
       "foundations": "Iskopi i temelji",
       "concrete": "Betonski radovi",
       "landscaping": "Uređenje terena",
-      "preparation": "Pripremni radovi"
+      "preparation": "Pripremni radovi",
+      "residential-site": {
+        "category": "Uređenje okućnice",
+        "title": "Priprema terena i prilaza",
+        "intro": "Priprema okućnice uz obiteljsku kuću za uredan, funkcionalan i dugotrajan vanjski prostor.",
+        "paragraph1": "Radovi su obuhvatili oblikovanje i niveliranje terena oko postojećeg objekta, uz pažljivo usklađivanje s pristupom kući i okolnim parcelama. Površina je pripremljena u slojevima kako bi sljedeće faze izvedbe imale stabilnu i ravnu podlogu.",
+        "paragraph2": "Posebna je pažnja posvećena organizaciji prilaza i završnom uređenju prostora uz objekt. Rezultat je čista, pripremljena okućnica spremna za nastavak radova, završne obloge i svakodnevno korištenje.",
+        "scope": { "one": "Iskop i priprema podloge", "two": "Niveliranje i oblikovanje terena", "three": "Priprema prostora uz kuću i prilaz" }
+      },
+      "urban-excavation": {
+        "category": "Iskop i priprema gradilišta",
+        "title": "Iskop na urbanoj parceli",
+        "intro": "Precizni zemljani radovi na ograničenoj gradskoj parceli, pripremljenoj za sljedeću fazu gradnje.",
+        "paragraph1": "Na lokaciji između postojećih objekata izvedeni su iskop i ravnanje radne površine. U skučenom prostoru bilo je važno pažljivo organizirati kretanje strojeva i odlaganje materijala, bez ometanja okolnog pristupa.",
+        "paragraph2": "Nakon uklanjanja površinskog sloja, teren je poravnat i pripremljen za daljnje građevinske radove. Fotografije prikazuju uredno organizirano gradilište i stabilnu radnu zonu za nastavak izvedbe.",
+        "scope": { "one": "Strojni iskop", "two": "Ravnanje i priprema radne površine", "three": "Organizacija radova u ograničenom prostoru" }
+      }
     },
     "viewAll": "Pogledaj sve projekte",
     "close": "Zatvori",
@@ -57,10 +88,24 @@
     "next": "Sljedeći projekt"
   },
   "cta": {
+    "eyebrow": "Besplatna ponuda",
     "titleLine1": "Imate projekt?",
     "titleLine2": "Mi imamo rješenje.",
-    "subtitle": "Javite nam se i zatražite besplatnu ponudu.",
-    "button": "Kontaktirajte nas"
+    "subtitle": "Javite nam se i zatražite besplatnu ponudu za vaše građevinske radove, iskope ili pripremu terena.",
+    "features": {
+      "quote": "Besplatna i neobvezujuća ponuda",
+      "response": "Brz odgovor u roku od 24 sata",
+      "machinery": "Vlastita moderna mehanizacija",
+      "coverage": "Radovi na području Osječko-baranjske županije"
+    },
+    "card": {
+      "title": "Zatražite ponudu",
+      "subtitle": "Nazovite nas ili pošaljite upit — javljamo se u najkraćem roku.",
+      "callLabel": "Nazovite nas",
+      "mailLabel": "Pošaljite e-mail",
+      "locationLabel": "Posjetite nas",
+      "note": "Odgovaramo obično isti dan."
+    }
   },
   "footer": {
     "tagline": "Pouzdani građevinski radovi koji grade budućnost. Stafan d.o.o. – vaš partner u gradnji.",

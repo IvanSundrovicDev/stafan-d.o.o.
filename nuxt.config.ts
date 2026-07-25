@@ -24,11 +24,7 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', language: 'en-US', file: 'en.json' },
       { code: 'de', name: 'Deutsch', language: 'de-DE', file: 'de.json' }
     ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root'
-    }
+    detectBrowserLanguage: false
   },
 
   schemaOrg: {

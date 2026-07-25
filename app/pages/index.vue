@@ -23,7 +23,7 @@ useSeoMeta({
   ogLocale: () => ogLocaleMap[locale.value] ?? "hr_HR",
   ogUrl: "https://stafan.netlify.app/",
   ogImage: {
-    url: "https://stafan.netlify.app/twitter-card.jpg",
+    url: "https://stafan.netlify.app/twitter-card.webp",
     width: 1536,
     height: 1024,
     type: "image/jpeg",
@@ -33,7 +33,7 @@ useSeoMeta({
   twitterCard: "summary_large_image",
   twitterTitle: () => t("seo.twitterTitle"),
   twitterDescription: () => t("seo.twitterDescription"),
-  twitterImage: "https://stafan.netlify.app/twitter-card.jpg",
+  twitterImage: "https://stafan.netlify.app/twitter-card.webp",
   twitterImageAlt:
     "Stafan d.o.o. – građevinski radovi, iskopi i pripremni radovi",
 });
@@ -86,7 +86,7 @@ useHead({
         "@id": "https://stafan.netlify.app/#generalcontractor",
         name: "Stafan d.o.o.",
         url: "https://stafan.netlify.app/",
-        image: "https://stafan.netlify.app/images/logo.png",
+        image: "https://stafan.netlify.app/images/logo.webp",
         priceRange: "$$",
         email: "josip.striskovic@gmail.com",
         telephone: "+385916403820",
@@ -127,7 +127,7 @@ useHead({
     </FadeIn>
 
     <FadeIn>
-      <About />
+      <About class="bg-zinc-950" />
     </FadeIn>
 
     <FadeIn>
@@ -135,7 +135,7 @@ useHead({
     </FadeIn>
 
     <FadeIn>
-      <Cta />
+      <Cta class="bg-zinc-950" />
     </FadeIn>
 
     <FadeIn>

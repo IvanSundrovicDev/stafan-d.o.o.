@@ -1,211 +1,279 @@
-<script setup>
-import { ArrowRight } from "lucide-vue-next";
+<script setup lang="ts">
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-vue-next";
 
 const { t } = useI18n();
 
 const projects = [
-  { src: "/images/gallery/1.jpg", labelKey: "projects.items.foundations" },
-  { src: "/images/gallery/2.jpg", labelKey: "projects.items.concrete" },
-  { src: "/images/gallery/3.jpg", labelKey: "projects.items.landscaping" },
-  { src: "/images/gallery/4.jpg", labelKey: "projects.items.preparation" },
+  {
+    slug: "residential-site",
+    cover: "/images/projects/project1/1.webp",
+    images: Array.from(
+      { length: 6 },
+      (_, index) => `/images/projects/project1/${index + 1}.webp`
+    ),
+    scopeKeys: ["one", "two", "three"],
+  },
+  {
+    slug: "urban-excavation",
+    cover: "/images/projects/project2/1.webp",
+    images: Array.from(
+      { length: 3 },
+      (_, index) => `/images/projects/project2/${index + 1}.webp`
+    ),
+    scopeKeys: ["one", "two", "three"],
+  },
 ];
 
-const selectedIndex = ref(null);
-const touchStartX = ref(0);
-const touchEndX = ref(0);
+const selectedProject = ref<(typeof projects)[number] | null>(null);
+const activeImageIndex = ref<number | null>(null);
+const lightboxTouchStartX = ref(0);
 
-const selectedProject = computed(() => {
-  if (selectedIndex.value === null) {
+const activeImage = computed(() => {
+  if (selectedProject.value === null || activeImageIndex.value === null) {
     return null;
   }
 
-  return projects[selectedIndex.value];
+  return selectedProject.value.images[activeImageIndex.value];
 });
 
-const openProject = (index) => {
-  selectedIndex.value = index;
+const openProject = (project: (typeof projects)[number]) => {
+  selectedProject.value = project;
 };
 
 const closeProject = () => {
-  selectedIndex.value = null;
+  activeImageIndex.value = null;
+  selectedProject.value = null;
 };
 
-const showNextProject = () => {
-  if (selectedIndex.value === null) {
+const openImage = (index: number) => {
+  activeImageIndex.value = index;
+};
+
+const closeLightbox = () => {
+  activeImageIndex.value = null;
+};
+
+const changeImage = (direction: number) => {
+  if (selectedProject.value === null || activeImageIndex.value === null) {
     return;
   }
 
-  selectedIndex.value = (selectedIndex.value + 1) % projects.length;
+  const imageCount = selectedProject.value.images.length;
+  activeImageIndex.value =
+    (activeImageIndex.value + direction + imageCount) % imageCount;
 };
 
-const showPreviousProject = () => {
-  if (selectedIndex.value === null) {
-    return;
-  }
-
-  selectedIndex.value =
-    (selectedIndex.value - 1 + projects.length) % projects.length;
+const onLightboxTouchStart = (event: TouchEvent) => {
+  lightboxTouchStartX.value = event.changedTouches[0].clientX;
 };
 
-const onTouchStart = (event) => {
-  touchStartX.value = event.changedTouches[0].clientX;
-};
-
-const onTouchEnd = (event) => {
-  touchEndX.value = event.changedTouches[0].clientX;
-  const swipeDistance = touchStartX.value - touchEndX.value;
+const onLightboxTouchEnd = (event: TouchEvent) => {
+  const swipeDistance = lightboxTouchStartX.value - event.changedTouches[0].clientX;
 
   if (Math.abs(swipeDistance) < 50) {
     return;
   }
 
-  if (swipeDistance > 0) {
-    showNextProject();
-  } else {
-    showPreviousProject();
-  }
+  changeImage(swipeDistance > 0 ? 1 : -1);
 };
-
-const onKeydown = (event) => {
-  if (event.key === "Escape") {
-    closeProject();
-  }
-
-  if (event.key === "ArrowRight") {
-    showNextProject();
-  }
-
-  if (event.key === "ArrowLeft") {
-    showPreviousProject();
-  }
-};
-
-onMounted(() => {
-  window.addEventListener("keydown", onKeydown);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("keydown", onKeydown);
-});
 </script>
 
 <template>
-  <section id="projekti" class="pt-16 sm:pt-24 pb-16 sm:pb-24">
+  <section id="projekti" class="pt-16 pb-16 sm:pt-24 sm:pb-24">
     <div class="section">
-      <div class="flex items-center gap-3 mb-8 sm:mb-12">
-        <h2
-          class="font-heading text-2xl sm:text-3xl uppercase tracking-wide text-white"
-        >
+      <div class="mb-8 flex items-center gap-3 sm:mb-12">
+        <h2 class="font-heading text-2xl uppercase tracking-wide text-white sm:text-3xl">
           {{ t("projects.title") }}
         </h2>
-        <span class="h-px flex-1 max-w-40 bg-white/15" />
+        <span class="h-px max-w-40 flex-1 bg-white/15" />
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <button
-          v-for="(project, index) in projects"
-          :key="project.labelKey"
-          type="button"
-          class="group text-left cursor-pointer"
-          @click="openProject(index)"
-        >
-          <div class="overflow-hidden rounded-lg border border-white/10">
-            <img
-              :src="project.src"
-              :alt="t(project.labelKey)"
-              loading="lazy"
-              class="aspect-[4/3] w-full object-cover transition duration-300 group-hover:scale-105"
-            />
-          </div>
-          <p
-            class="mt-3 font-heading text-sm sm:text-base uppercase tracking-wide text-white group-hover:text-primary transition"
-          >
-            {{ t(project.labelKey) }}
-          </p>
-        </button>
-      </div>
-
-      <div class="flex justify-center mt-10 sm:mt-14">
-        <button
-          type="button"
-          class="btn-primary px-8 py-4 text-sm cursor-pointer"
-          @click="openProject(0)"
-        >
-          {{ t("projects.viewAll") }}
-          <ArrowRight :size="18" />
-        </button>
-      </div>
-
-      <Transition
-        enter-active-class="transition duration-300 ease-out"
-        enter-from-class="opacity-0"
-        enter-to-class="opacity-100"
-        leave-active-class="transition duration-200 ease-in"
-        leave-from-class="opacity-100"
-        leave-to-class="opacity-0"
-      >
+      <Transition name="project-view" mode="out-in">
         <div
-          v-if="selectedProject"
-          class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm p-4 md:p-8"
-          @click="closeProject"
+          v-if="!selectedProject"
+          key="project-list"
+          class="grid gap-5 sm:grid-cols-2 sm:gap-6"
         >
           <button
+            v-for="project in projects"
+            :key="project.slug"
             type="button"
-            class="absolute top-4 right-4 md:top-6 md:right-6 text-white text-sm uppercase tracking-widest border border-white/40 px-4 py-2 rounded-full hover:bg-primary hover:text-dark hover:border-primary transition cursor-pointer"
-            @click.stop="closeProject"
+            class="group cursor-pointer text-left"
+            @click="openProject(project)"
           >
-            {{ t("projects.close") }}
-          </button>
-
-          <button
-            type="button"
-            class="absolute left-4 top-1/2 -translate-y-1/2 md:left-6 text-white text-2xl border border-white/40 w-11 h-11 rounded-full hover:bg-primary hover:text-dark hover:border-primary transition cursor-pointer"
-            :aria-label="t('projects.previous')"
-            @click.stop="showPreviousProject"
-          >
-            ‹
-          </button>
-
-          <button
-            type="button"
-            class="absolute right-4 top-1/2 -translate-y-1/2 md:right-6 text-white text-2xl border border-white/40 w-11 h-11 rounded-full hover:bg-primary hover:text-dark hover:border-primary transition cursor-pointer"
-            :aria-label="t('projects.next')"
-            @click.stop="showNextProject"
-          >
-            ›
-          </button>
-
-          <div
-            class="w-full h-full flex flex-col items-center justify-center gap-4"
-            @click.stop
-            @touchstart="onTouchStart"
-            @touchend="onTouchEnd"
-          >
-            <Transition
-              mode="out-in"
-              enter-active-class="transition-opacity duration-300 ease-out"
-              enter-from-class="opacity-0"
-              enter-to-class="opacity-100"
-              leave-active-class="transition-opacity duration-200 ease-in"
-              leave-from-class="opacity-100"
-              leave-to-class="opacity-0"
-            >
+            <div class="overflow-hidden rounded-lg border border-white/10 bg-white/5">
               <img
-                :key="selectedProject.src"
-                :src="selectedProject.src"
-                :alt="t(selectedProject.labelKey)"
-                class="max-w-full max-h-[80vh] object-contain rounded-lg"
+                :src="project.cover"
+                :alt="t(`projects.items.${project.slug}.title`)"
+                loading="lazy"
+                class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105"
               />
-            </Transition>
-
-            <p
-              class="font-heading uppercase tracking-wide text-primary text-lg"
-            >
-              {{ t(selectedProject.labelKey) }}
-            </p>
-          </div>
+            </div>
+            <div class="mt-4 flex items-end justify-between gap-4">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                  {{ t(`projects.items.${project.slug}.category`) }}
+                </p>
+                <h3 class="mt-2 font-heading text-xl uppercase tracking-wide text-white transition group-hover:text-primary sm:text-2xl">
+                  {{ t(`projects.items.${project.slug}.title`) }}
+                </h3>
+              </div>
+              <ArrowRight class="mb-1 shrink-0 text-primary transition-transform duration-300 group-hover:translate-x-1" :size="22" />
+            </div>
+          </button>
         </div>
+
+        <article v-else key="project-detail" class="project-detail">
+          <button
+            type="button"
+            class="mb-8 inline-flex cursor-pointer items-center gap-2 text-sm font-semibold uppercase tracking-wider text-zinc-300 transition hover:text-primary"
+            @click="closeProject"
+          >
+            <ArrowLeft :size="18" />
+            {{ t("projects.back") }}
+          </button>
+
+          <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                {{ t(`projects.items.${selectedProject.slug}.category`) }}
+              </p>
+              <h3 class="mt-3 font-heading text-4xl uppercase leading-none text-white sm:text-5xl">
+                {{ t(`projects.items.${selectedProject.slug}.title`) }}
+              </h3>
+              <p class="mt-6 text-lg leading-relaxed text-zinc-300">
+                {{ t(`projects.items.${selectedProject.slug}.intro`) }}
+              </p>
+              <div class="mt-7 space-y-4 leading-relaxed text-zinc-400">
+                <p>{{ t(`projects.items.${selectedProject.slug}.paragraph1`) }}</p>
+                <p>{{ t(`projects.items.${selectedProject.slug}.paragraph2`) }}</p>
+              </div>
+
+              <div class="mt-8 border-l-2 border-primary pl-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                  {{ t("projects.scopeTitle") }}
+                </p>
+                <ul class="mt-3 space-y-2 text-zinc-300">
+                  <li v-for="scopeKey in selectedProject.scopeKeys" :key="scopeKey">
+                    {{ t(`projects.items.${selectedProject.slug}.scope.${scopeKey}`) }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 self-start">
+              <button
+                v-for="(image, index) in selectedProject.images"
+                :key="image"
+                type="button"
+                class="group/image relative cursor-pointer overflow-hidden rounded-lg border border-white/10"
+                :class="index === 0 ? 'col-span-2 aspect-[16/10]' : 'aspect-square'"
+                :aria-label="t('projects.openImage')"
+                @click="openImage(index)"
+              >
+                <img
+                  :src="image"
+                  :alt="`${t(`projects.items.${selectedProject.slug}.title`)} — ${index + 1}`"
+                  loading="lazy"
+                  class="size-full object-cover transition duration-500 group-hover/image:scale-105"
+                />
+                <span class="absolute inset-0 bg-black/0 transition group-hover/image:bg-black/20" />
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn-primary mt-10 cursor-pointer px-7 py-3 text-sm"
+            @click="closeProject"
+          >
+            {{ t("projects.back") }}
+            <X :size="18" />
+          </button>
+        </article>
       </Transition>
     </div>
+
+    <Teleport to="body">
+      <Transition name="lightbox">
+        <div
+          v-if="activeImage"
+          class="fixed inset-0 z-50 flex cursor-pointer items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
+          role="dialog"
+          aria-modal="true"
+          :aria-label="t('projects.openImage')"
+          @click="closeLightbox"
+          @touchstart="onLightboxTouchStart"
+          @touchend="onLightboxTouchEnd"
+        >
+          <button
+            type="button"
+            class="absolute right-4 top-4 inline-flex cursor-pointer items-center gap-2 border border-white/30 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:border-primary hover:bg-primary hover:text-dark sm:right-8 sm:top-8"
+            @click.stop="closeLightbox"
+          >
+            {{ t("projects.close") }}
+            <X :size="16" />
+          </button>
+          <button
+            type="button"
+            class="absolute left-3 top-1/2 inline-flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition hover:border-primary hover:bg-primary hover:text-dark sm:left-8"
+            :aria-label="t('projects.previous')"
+            @click.stop="changeImage(-1)"
+          >
+            <ChevronLeft :size="24" />
+          </button>
+          <button
+            type="button"
+            class="absolute right-3 top-1/2 inline-flex size-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition hover:border-primary hover:bg-primary hover:text-dark sm:right-8"
+            :aria-label="t('projects.next')"
+            @click.stop="changeImage(1)"
+          >
+            <ChevronRight :size="24" />
+          </button>
+          <img
+            :src="activeImage"
+            :alt="t(`projects.items.${selectedProject?.slug}.title`)"
+            class="max-h-full max-w-full cursor-default rounded-lg object-contain"
+            @click.stop
+          />
+        </div>
+      </Transition>
+    </Teleport>
   </section>
 </template>
+
+<style scoped>
+.project-view-enter-active,
+.project-view-leave-active {
+  transition: opacity 350ms ease, transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-view-enter-from {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+
+.project-view-leave-to {
+  opacity: 0;
+  transform: translateY(-1rem);
+}
+
+.lightbox-enter-active,
+.lightbox-leave-active {
+  transition: opacity 250ms ease;
+}
+
+.lightbox-enter-from,
+.lightbox-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-view-enter-active,
+  .project-view-leave-active,
+  .lightbox-enter-active,
+  .lightbox-leave-active {
+    transition: none;
+  }
+}
+</style>
