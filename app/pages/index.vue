@@ -13,7 +13,7 @@ useSeoMeta({
   description: () => t("seo.description"),
 
   keywords:
-    "građevinski radovi, iskopi, pripremni radovi, betonski radovi, najam građevinskih strojeva, Zagreb, Hrvatska, Stafan",
+    "izrada temelja, temelji Osijek, iskop temelja, iskopi Osijek, pripremni radovi, zemljani radovi, Osječko-baranjska županija, Stafan",
 
   ogTitle: () => t("seo.ogTitle"),
 
@@ -26,7 +26,7 @@ useSeoMeta({
     url: "https://stafan.netlify.app/twitter-card.webp",
     width: 1536,
     height: 1024,
-    type: "image/jpeg",
+    type: "image/webp",
     alt: "Stafan d.o.o. – građevinski radovi, iskopi i pripremni radovi",
   },
 
@@ -90,11 +90,22 @@ useHead({
         priceRange: "$$",
         email: "josip.striskovic@gmail.com",
         telephone: "+385916403820",
-        areaServed: ["Zagreb", "Hrvatska"],
-        serviceArea: {
-          "@type": "AdministrativeArea",
-          name: "Hrvatska",
-        },
+        areaServed: [
+          { "@type": "AdministrativeArea", name: "Osječko-baranjska županija" },
+          { "@type": "City", name: "Osijek" },
+          { "@type": "City", name: "Đakovo" },
+          { "@type": "City", name: "Valpovo" },
+          { "@type": "City", name: "Našice" },
+          { "@type": "City", name: "Belišće" },
+          { "@type": "City", name: "Donji Miholjac" },
+          { "@type": "City", name: "Beli Manastir" },
+        ],
+        serviceType: [
+          "Izrada temelja",
+          "Iskop temelja",
+          "Pripremni radovi",
+          "Zemljani radovi",
+        ],
         geo: {
           "@type": "GeoCoordinates",
           latitude: 45.5887,
@@ -127,7 +138,7 @@ useHead({
     </FadeIn>
 
     <FadeIn>
-      <About class="bg-zinc-950" />
+      <About class="bg-zinc-900" />
     </FadeIn>
 
     <FadeIn>
@@ -135,7 +146,7 @@ useHead({
     </FadeIn>
 
     <FadeIn>
-      <Cta class="bg-zinc-950" />
+      <Cta class="bg-zinc-900" />
     </FadeIn>
 
     <FadeIn>

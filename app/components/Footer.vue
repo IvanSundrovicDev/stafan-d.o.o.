@@ -8,7 +8,6 @@ const currentYear = new Date().getFullYear();
 
 <template>
   <footer
-    id="kontakt"
     class="border-t border-white/10 pt-14 sm:pt-20 pb-8 sm:pb-10"
   >
     <div class="section grid lg:grid-cols-3 gap-8 sm:gap-12">
@@ -42,10 +41,15 @@ const currentYear = new Date().getFullYear();
             josip.striskovic@gmail.com
           </a>
 
-          <p class="flex items-center gap-3">
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=45.5887,18.3366"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 transition hover:text-primary"
+          >
             <MapPin :size="18" class="text-primary shrink-0" />
             {{ t("footer.location") }}
-          </p>
+          </a>
         </div>
       </div>
 

@@ -8,9 +8,9 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "titleLine1": "Pouzdani radovi.",
-    "titleLine2": "Čvrsti temelji.",
-    "subtitle": "Građevinski radovi, iskopi i pripremni radovi koji grade budućnost.",
+    "titleLine1": "Izrada temelja.",
+    "titleLine2": "Iskopi i priprema.",
+    "subtitle": "Izrada temelja, iskopi i pripremni radovi za siguran početak gradnje u Osijeku i Osječko-baranjskoj županiji.",
     "cta": "Zatraži ponudu"
   },
   "services": {
@@ -39,7 +39,7 @@
     "eyebrow": "O nama",
     "titleLine1": "Iskustvo. Kvaliteta.",
     "titleLine2": "Povjerenje.",
-    "description": "Tvrtka Stafan d.o.o. bavi se građevinskim radovima, iskopima i pripremnim radovima na području cijele Hrvatske. Naš cilj je kvalitetno izveden posao, poštena suradnja i zadovoljni klijenti.",
+    "description": "Stafan d.o.o. izvodi temelje, iskope i pripremne radove u Osijeku, Đakovu, Valpovu, Našicama, Belišću, Donjem Miholjcu, Belom Manastiru i cijeloj Osječko-baranjskoj županiji. Naš cilj je kvalitetno izveden posao, poštena suradnja i zadovoljni klijenti.",
     "stats": {
       "experience": "Godina iskustva",
       "projects": "Završenih projekata",
@@ -96,7 +96,7 @@
       "quote": "Besplatna i neobvezujuća ponuda",
       "response": "Brz odgovor u roku od 24 sata",
       "machinery": "Vlastita moderna mehanizacija",
-      "coverage": "Radovi na području Osječko-baranjske županije"
+      "coverage": "Radovi u Osijeku, Đakovu, Valpovu, Našicama, Belišću, Donjem Miholjcu, Belom Manastiru i cijeloj županiji"
     },
     "card": {
       "title": "Zatražite ponudu",
@@ -124,10 +124,10 @@
   },
   "seo": {
     "title": "Stafan d.o.o.",
-    "description": "Stafan d.o.o. – građevinski radovi, iskopi, pripremni radovi i najam strojeva na području cijele Hrvatske. Pouzdani radovi i čvrsti temelji.",
-    "ogTitle": "Građevinski radovi, iskopi i pripremni radovi | Stafan d.o.o.",
-    "ogDescription": "Pouzdani građevinski radovi, iskopi i pripremni radovi koji grade budućnost.",
-    "twitterTitle": "Stafan d.o.o. | Građevinski radovi, iskopi, pripremni radovi",
-    "twitterDescription": "Građevinski radovi, iskopi i pripremni radovi na području cijele Hrvatske."
+    "description": "Stafan d.o.o. – izrada temelja, iskopi i pripremni radovi u Osijeku, Đakovu, Valpovu, Našicama i cijeloj Osječko-baranjskoj županiji.",
+    "ogTitle": "Izrada temelja, iskopi i pripremni radovi | Stafan d.o.o.",
+    "ogDescription": "Pouzdana izrada temelja, iskopi i pripremni radovi u Osijeku i Osječko-baranjskoj županiji.",
+    "twitterTitle": "Stafan d.o.o. | Temelji, iskopi i pripremni radovi",
+    "twitterDescription": "Izrada temelja, iskopi i pripremni radovi u Osijeku i Osječko-baranjskoj županiji."
   }
 }

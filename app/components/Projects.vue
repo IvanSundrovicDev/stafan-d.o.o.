@@ -27,6 +27,27 @@ const projects = [
 const selectedProject = ref<(typeof projects)[number] | null>(null);
 const activeImageIndex = ref<number | null>(null);
 const lightboxTouchStartX = ref(0);
+const lightboxTouchStartY = ref(0);
+const projectsSection = ref<HTMLElement | null>(null);
+
+const scrollToProjects = () => {
+  if (!projectsSection.value) {
+    return;
+  }
+
+  const oneRem =
+    Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+  window.scrollTo({
+    top: Math.max(
+      0,
+      window.scrollY + projectsSection.value.getBoundingClientRect().top - oneRem
+    ),
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth",
+  });
+};
 
 const activeImage = computed(() => {
   if (selectedProject.value === null || activeImageIndex.value === null) {
@@ -38,11 +59,13 @@ const activeImage = computed(() => {
 
 const openProject = (project: (typeof projects)[number]) => {
   selectedProject.value = project;
+  scrollToProjects();
 };
 
 const closeProject = () => {
   activeImageIndex.value = null;
   selectedProject.value = null;
+  scrollToProjects();
 };
 
 const openImage = (index: number) => {
@@ -65,12 +88,18 @@ const changeImage = (direction: number) => {
 
 const onLightboxTouchStart = (event: TouchEvent) => {
   lightboxTouchStartX.value = event.changedTouches[0].clientX;
+  lightboxTouchStartY.value = event.changedTouches[0].clientY;
 };
 
 const onLightboxTouchEnd = (event: TouchEvent) => {
   const swipeDistance = lightboxTouchStartX.value - event.changedTouches[0].clientX;
+  const verticalDistance =
+    lightboxTouchStartY.value - event.changedTouches[0].clientY;
 
-  if (Math.abs(swipeDistance) < 50) {
+  if (
+    Math.abs(swipeDistance) < 50 ||
+    Math.abs(swipeDistance) < Math.abs(verticalDistance)
+  ) {
     return;
   }
 
@@ -79,7 +108,7 @@ const onLightboxTouchEnd = (event: TouchEvent) => {
 </script>
 
 <template>
-  <section id="projekti" class="pt-16 pb-16 sm:pt-24 sm:pb-24">
+  <section ref="projectsSection" id="projekti" class="scroll-mt-4 pt-16 pb-16 sm:pt-24 sm:pb-24">
     <div class="section">
       <div class="mb-8 flex items-center gap-3 sm:mb-12">
         <h2 class="font-heading text-2xl uppercase tracking-wide text-white sm:text-3xl">
@@ -198,7 +227,7 @@ const onLightboxTouchEnd = (event: TouchEvent) => {
       <Transition name="lightbox">
         <div
           v-if="activeImage"
-          class="fixed inset-0 z-50 flex cursor-pointer items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
+          class="fixed inset-0 z-[2000] flex cursor-pointer items-center justify-center bg-black/90 p-4 touch-pan-y backdrop-blur-sm sm:p-8"
           role="dialog"
           aria-modal="true"
           :aria-label="t('projects.openImage')"

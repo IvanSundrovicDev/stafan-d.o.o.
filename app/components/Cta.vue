@@ -8,7 +8,8 @@ const features = ["quote", "response", "machinery", "coverage"];
 
 <template>
   <section
-    class="relative overflow-hidden"
+    id="kontakt"
+    class="relative scroll-mt-8 overflow-hidden"
   >
     <div
       class="section py-14 sm:py-20 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16"

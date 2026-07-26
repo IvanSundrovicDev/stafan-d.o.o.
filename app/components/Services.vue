@@ -12,7 +12,7 @@ const services = [
 </script>
 
 <template>
-  <section id="usluge" class="relative z-10 -mt-10 sm:-mt-14">
+  <section id="usluge" class="relative z-10 -mt-10 sm:-mt-14 mb-4">
     <div class="section">
       <div
         class="bg-primary text-dark rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.45)] grid sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-black/15"

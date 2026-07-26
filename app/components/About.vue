@@ -67,9 +67,10 @@ onMounted(() => {
 <template>
   <section
     id="o-nama"
-    class="pt-20 sm:pt-28 pb-16 sm:pb-24">
+    class="relative overflow-hidden pt-20 sm:pt-28 pb-16 sm:pb-24">
+    <div class="about-bg" aria-hidden="true" />
     <div
-      class="section grid gap-x-10 gap-y-0 lg:grid-cols-2 lg:gap-x-16 items-center"
+      class="section relative grid gap-x-10 gap-y-0 lg:grid-cols-2 lg:gap-x-16 items-center"
     >
       <div>
         <div class="flex items-center gap-3 mb-5">
@@ -89,7 +90,7 @@ onMounted(() => {
           <span class="text-primary">{{ t("about.titleLine2") }}</span>
         </h2>
 
-        <p class="mt-6 text-zinc-400 text-base sm:text-lg max-w-xl">
+        <p class="mt-6 text-zinc-300 text-base sm:text-lg max-w-xl">
           {{ t("about.description") }}
         </p>
 
@@ -135,7 +136,7 @@ onMounted(() => {
         </button>
       </div>
 
-      <div class="relative mt-10 self-start lg:mt-0">
+      <div class="relative mt-10 hidden self-start lg:mt-0 lg:block">
         <img
           src="/images/about.jpg"
           alt="Stafan d.o.o. na gradilištu"
@@ -148,7 +149,7 @@ onMounted(() => {
         <div
           v-show="isExpanded"
           id="about-details"
-          class="about-details mt-6 grid w-full text-zinc-400 leading-relaxed lg:col-span-2"
+          class="about-details mt-6 grid w-full text-zinc-300 leading-relaxed lg:col-span-2"
         >
           <div class="about-details__content space-y-4">
             <p>{{ t("about.details.paragraph1") }}</p>
@@ -164,6 +165,19 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.about-bg {
+  position: absolute;
+  inset: 0;
+  background: url("/images/about.jpg") center / cover no-repeat;
+  opacity: 0.2;
+}
+
+@media (width >= 64rem) {
+  .about-bg {
+    display: none;
+  }
+}
+
 .about-details-enter-active,
 .about-details-leave-active {
   transition:
